@@ -1,4 +1,4 @@
-import space_api/transaction, space_api/database
+import space_api/models/transaction, space_api/database
 
 when isMainModule:
   echo("Space API started...")
