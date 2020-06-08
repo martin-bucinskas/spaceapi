@@ -82,3 +82,4 @@ proc tx_insertTransaction*(db: DbConn, tx: Transaction): int64 =
     tx.tx_date, tx.tx_amount, tx.tx_ref, tx.tx_log_id
   )
   return id
+
