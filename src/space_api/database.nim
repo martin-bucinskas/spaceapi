@@ -7,6 +7,7 @@ proc db_init*(): DbConn =
 
 proc db_get_version*(db: DbConn): string =
     result = db.getValue(sql"SELECT version();")
+    
 
 proc db_close*(db: DbConn): void =
     db.close()
