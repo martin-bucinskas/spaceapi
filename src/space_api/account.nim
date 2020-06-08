@@ -1,7 +1,7 @@
 import db_postgres, strutils
 
 type
-  AccountType* = enum
+  AccountType* {.pure.} = enum
     bankAccount, creditAccount, savingsAccount
 
 type
@@ -109,7 +109,7 @@ proc account_insertAccount*(db: DbConn, account: Account, account_type: AccountT
         account.user_id, account.account_name, account.current_total
       )
       return id
-    
+
     of AccountType.creditAccount:
       var id: int64 = db.tryInsertID(
         sql"INSERT INTO space_core.credit_account(user_id, account_name, current_total, maximum) VALUES (?, ?, ?, ?)",
